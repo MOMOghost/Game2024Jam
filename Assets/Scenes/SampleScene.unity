@@ -630,7 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238688465}
   - component: {fileID: 1238688466}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,11 +1064,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1176256724431304431, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1176256724431304431, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.48
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1176256724431304431, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1102,6 +1102,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1176256724431304431, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1867966243767925923, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1111,12 +1115,24 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_Size.x
       value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_Size.y
       value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: platformLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1129,10 +1145,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
-  - {fileID: 6121248465554793810}
   - {fileID: 1490807023}
   - {fileID: 854040824}
   - {fileID: 1375656989}
   - {fileID: 1968808721}
   - {fileID: 2052762141}
+  - {fileID: 6121248465554793810}
   - {fileID: 637883891}

@@ -58,8 +58,6 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
-
-         
     }
 
     void Update()
@@ -73,6 +71,8 @@ public class PlayerController : MonoBehaviour
 
         //垂直移動 - 跳躍
         _jumpKeyDown = Input.GetKeyDown(KeyCode.Space);
+
+        ChangeAnimator();
 
         //判斷是否在平台
         IsGround();
@@ -162,22 +162,31 @@ public class PlayerController : MonoBehaviour
     private void ChangeAnimator()
     {
         fall = false;
-        if (_rigidbody2D.velocity.y < 0)
+        if (_rigidbody2D.velocity.y < 0){
             fall = true;
+        }
+           
 
         jump = false;
-        if (_rigidbody2D.velocity.y > 0)
-            jump = true;
-
+        if (_rigidbody2D.velocity.y > 1.41){  //1.40275  // 0
+             jump = true;
+        }
+           
         run = false;
-        if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround)
+        Debug.Log("_rigidbody2D.velocity.x : " + _rigidbody2D.velocity.x);
+
+        if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround){
             run = true;
-
-        if (_rigidbody2D.velocity.x < 0)
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-        if (_rigidbody2D.velocity.x > 0)
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-
+        }
+            
+        if (_rigidbody2D.velocity.x < 0){
+            transform.localScale = new Vector3(-0.3551f, transform.localScale.y, transform.localScale.z);
+        }
+       
+        if (_rigidbody2D.velocity.x > 0){
+            transform.localScale = new Vector3(0.3551f, transform.localScale.y, transform.localScale.z);
+        }
+            
         _animator.SetBool(Hit, hit);
         _animator.SetBool(Fall, fall);
         _animator.SetBool(DoubleJump, doubleJump);
