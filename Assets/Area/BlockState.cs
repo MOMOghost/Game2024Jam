@@ -7,6 +7,7 @@ using UnityEngine;
 public class BlockState : MonoBehaviour
 {
     public AreaLocal area;
+    public BlockEmoji emoji;
     public Vector2 offset,size;
     public Sprite blockImage;
     public float moveSpeed;
