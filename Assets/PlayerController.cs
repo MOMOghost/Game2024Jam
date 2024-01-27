@@ -1,6 +1,9 @@
+using System;
+using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,15 +36,22 @@ public class PlayerController : MonoBehaviour
     public LayerMask platformLayer;
     #endregion
 
+    #region 角色動畫
+        public bool
+            dead,
+            isGround,
+            hit,
+            fall,
+            doubleJump,
+            jump,
+            run;
 
-    public bool
-        dead,
-        isGround,
-        hit,
-        fall,
-        doubleJump,
-        jump,
-        run;
+        private static readonly int Hit = Animator.StringToHash("hit");
+        private static readonly int Fall = Animator.StringToHash("fall");
+        private static readonly int DoubleJump = Animator.StringToHash("doubleJump");
+        private static readonly int Jump = Animator.StringToHash("jump");
+        private static readonly int Run = Animator.StringToHash("run");
+    #endregion
 
     void Start()
     {
@@ -89,11 +99,6 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("Move");
         _rigidbody2D.velocity = new Vector2(movement.x * speed, _rigidbody2D.velocity.y);
     }
-
-
-
-
-
 
 
 
@@ -147,6 +152,37 @@ public class PlayerController : MonoBehaviour
     private void IsGround()
     {
         isGround = _boxCollider2D.IsTouchingLayers(platformLayer);
+    }
+
+
+
+    /*
+     * 角色動畫
+     */
+    private void ChangeAnimator()
+    {
+        fall = false;
+        if (_rigidbody2D.velocity.y < 0)
+            fall = true;
+
+        jump = false;
+        if (_rigidbody2D.velocity.y > 0)
+            jump = true;
+
+        run = false;
+        if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround)
+            run = true;
+
+        if (_rigidbody2D.velocity.x < 0)
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        if (_rigidbody2D.velocity.x > 0)
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+
+        _animator.SetBool(Hit, hit);
+        _animator.SetBool(Fall, fall);
+        _animator.SetBool(DoubleJump, doubleJump);
+        _animator.SetBool(Jump, jump);
+        _animator.SetBool(Run, run);
     }
     
 }
