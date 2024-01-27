@@ -4,9 +4,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SupSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
+    #region 角色音效
+    [SerializeField] SoundController.AudioType volumeName;
+        // Start is called before the first frame update
+    [SerializeField]  SoundController soundController;
+    #endregion
+
 
 
     #region 移動操作
@@ -58,6 +66,9 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
+
+
+        soundController.PlayAudio(soundController.BGM[0], SoundController.AudioType.BGM, false);
     }
 
     void Update()
@@ -98,6 +109,8 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal"); 
         // Debug.Log("Move");
         _rigidbody2D.velocity = new Vector2(movement.x * speed, _rigidbody2D.velocity.y);
+
+        
     }
 
 
@@ -122,7 +135,7 @@ public class PlayerController : MonoBehaviour
             _jumpCount++;
             _rigidbody2D.AddForce(Vector2.up * jumpForce);
             jump = true;
-            //SoundManager.PlayJumpSound();
+            soundController.PlayAudio(soundController.Sound[0], SoundController.AudioType.Sound, false);
         }
 
         //二段跳
@@ -134,7 +147,7 @@ public class PlayerController : MonoBehaviour
             if (_jumpCount < maxJumpCount)
             {
                 _rigidbody2D.AddForce(Vector2.up * jumpForce);
-                //SoundManager.PlayJumpSound();
+                soundController.PlayAudio(soundController.Sound[0], SoundController.AudioType.Sound, false);
             }
         }
 
@@ -146,12 +159,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    bool GroundSound = false;
+
     /**
      * 判断是否落在平台上
      */
     private void IsGround()
     {
         isGround = _boxCollider2D.IsTouchingLayers(platformLayer);
+
+        if(isGround && GroundSound){
+            GroundSound = false;
+            soundController.PlayAudio(soundController.Sound[2], SoundController.AudioType.Sound, false);
+        }
     }
 
 
@@ -164,6 +185,7 @@ public class PlayerController : MonoBehaviour
         fall = false;
         if (_rigidbody2D.velocity.y < 0){
             fall = true;
+            GroundSound = true;
         }
            
 
@@ -177,6 +199,7 @@ public class PlayerController : MonoBehaviour
 
         if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround){
             run = true;
+            soundController.PlayAudio(soundController.Sound[1], SoundController.AudioType.Sound, false);
         }
             
         if (_rigidbody2D.velocity.x < 0){
