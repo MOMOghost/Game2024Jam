@@ -11,5 +11,11 @@ public class DeathArea : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "BG")
+        {
+            
+        }
+    }
 }
