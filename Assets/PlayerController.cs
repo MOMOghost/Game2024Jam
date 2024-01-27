@@ -130,10 +130,11 @@ public class PlayerController : MonoBehaviour
     //傷害後回復閒置狀態
     private void RecoverIdle()
     {
-        if (hit)
+        if (hit){
             hit = false;
+        }
+            
     }
-
 
 
     public void JumpButton()
