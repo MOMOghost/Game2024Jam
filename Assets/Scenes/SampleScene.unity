@@ -1024,7 +1024,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2321d0e12e385ae4f8bbb668a076ad75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
+  jumpForce: 100
+  maxJumpCount: 2
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  dead: 0
+  isGround: 0
+  hit: 0
+  fall: 0
+  doubleJump: 0
+  jump: 0
+  run: 0
 --- !u!1 &2052762137
 GameObject:
   m_ObjectHideFlags: 0

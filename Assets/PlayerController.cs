@@ -60,10 +60,15 @@ public class PlayerController : MonoBehaviour
 
         //水平移動
         Move();
+
+        //垂直移動 - 跳躍
         _jumpKeyDown = Input.GetKeyDown(KeyCode.Space);
 
         //判斷是否在平台
         IsGround();
+
+        //跳躍狀態判斷
+        JumpTrigger();
     }
 
     public void MoveToLeft()
@@ -85,6 +90,14 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.velocity = new Vector2(movement.x * speed, _rigidbody2D.velocity.y);
     }
 
+
+
+
+
+
+
+
+
     public void JumpButton()
     {
         _jumpKeyDown = true;
@@ -93,7 +106,7 @@ public class PlayerController : MonoBehaviour
     /**
      * 跳跃
      * 在平台上才能起跳
-     * 跳跃次数不能超过maxJumpCount
+     * 跳跃次数不能超过maxJumpCount   等等就給他可以
      */
     private void JumpTrigger()
     {
@@ -134,11 +147,6 @@ public class PlayerController : MonoBehaviour
     private void IsGround()
     {
         isGround = _boxCollider2D.IsTouchingLayers(platformLayer);
-
-        if(isGround){
-                    Debug.Log("isGround : "+ isGround);
-        }
-
     }
     
 }
