@@ -1485,7 +1485,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65c10d7dfaf37144ea04fed0d2479dfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e95e9ecca9ec5dc48a2e7e25966f2c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1880,6 +1880,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 686348866}
     m_Modifications:
+    - target: {fileID: 1909204815397476896, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909204815397476896, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909204815397476896, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5557437080159315548, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
       propertyPath: m_Name
       value: "\u5FAE\u7B11\u5E73\u53F0"
@@ -2532,7 +2544,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e6b684aa4b7541446b2b5c8da347456a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e95e9ecca9ec5dc48a2e7e25966f2c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4304,6 +4316,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 311303635}
     - target: {fileID: 4901570895485204721, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
+      propertyPath: spawnRollTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4901570895485204721, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
       propertyPath: ownerBlock.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4389,6 +4405,10 @@ PrefabInstance:
       propertyPath: blockFolder
       value: 
       objectReference: {fileID: 56282994}
+    - target: {fileID: 4901570895485204721, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
+      propertyPath: spawnRollTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4901570895485204721, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
       propertyPath: ownerBlock.Array.size
       value: 2
@@ -4528,7 +4548,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b80e2aa222344246be59e9acef647b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e95e9ecca9ec5dc48a2e7e25966f2c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5354,7 +5374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a787c46e0b5ea3e42ae6538a289c6c8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e95e9ecca9ec5dc48a2e7e25966f2c5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5621,6 +5641,10 @@ PrefabInstance:
       propertyPath: blockFolder
       value: 
       objectReference: {fileID: 2068019779}
+    - target: {fileID: 4901570895485204721, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
+      propertyPath: spawnRollTime
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8996030886109753517, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5789,6 +5813,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1176256724431304431, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1867966243767925923, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5803,7 +5831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3107630549528831741, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_Offset.y
-      value: -1.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: soundController

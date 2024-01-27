@@ -14,7 +14,7 @@ public class BlockSpawn : MonoBehaviour
     {
         areaBound=GetComponent<BoxCollider2D>();
         ownerArea=transform.parent.GetComponent<AreaState>();
-InvokeRepeating(nameof(SpawnBlock), 0,2f);
+InvokeRepeating(nameof(SpawnBlock),0, ownerArea.spawnRollTime);
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ public class AreaState : MonoBehaviour
     public List<BlockState> nowBlocks;
     public GameObject blockFolder;
     public float rollSpeed= 1;
+    public float spawnRollTime= 2;
     public Vector2 rollVector=Vector2.up;
     // Start is called before the first frame update
     void Start()
