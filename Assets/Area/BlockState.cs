@@ -48,6 +48,7 @@ public enum BlockEmoji
 {
     Happy,
     Angry,
+    StarBust,
     Count
 }
 public enum BlockType

@@ -6,6 +6,7 @@ public class AreaState : MonoBehaviour
 {
     public AreaLocal Area;
     public List<BlockTemple> ownerBlock;
+    public EmojiControll emojis;
     public List<BlockState> nowBlocks;
     public GameObject blockFolder;
     public float rollSpeed= 1;
@@ -19,11 +20,6 @@ public class AreaState : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.transform.tag == "Block")

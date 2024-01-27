@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BlockSpawn : MonoBehaviour
@@ -32,8 +33,10 @@ InvokeRepeating(nameof(SpawnBlock), 0,2f);
         state.area=ownerArea.Area;
         ownerArea.ownerBlock[Mathf.Clamp(Random.Range(0, ownerArea.ownerBlock.Count),0, ownerArea.ownerBlock.Count)].InitBlock(state);
         state.emoji = (BlockEmoji)Mathf.Clamp(Random.Range(0, (int)BlockEmoji.Count), 0, (int)BlockEmoji.Count-1);
-        newBlock.GetComponent<BlockState>().moveVector=ownerArea.rollVector;
-        newBlock.GetComponent<BlockState>().startMove=true;
+        state.moveVector=ownerArea.rollVector;
+        state.startMove=true;
+        newBlock.AddComponent<SpriteRenderer>().sprite = ownerArea.emojis.emojiList.Find(e=> e.emoji == state.emoji).sprite;
+        newBlock.GetComponent<SpriteRenderer>().sortingOrder = 3;
         ownerArea.nowBlocks.Add(newBlock.GetComponent<BlockState>());
     }
 }
