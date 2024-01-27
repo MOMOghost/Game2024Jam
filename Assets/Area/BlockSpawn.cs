@@ -26,8 +26,11 @@ public class BlockSpawn : MonoBehaviour
         Vector2 spawnPoint = new Vector2(Random.Range(areaBound.offset.x - (areaBound.size.x / 2), areaBound.offset.x + (areaBound.size.x / 2)),
             Random.Range(areaBound.offset.y - (areaBound.size.y / 2), areaBound.offset.y + (areaBound.size.y / 2)));
         Transform newBlock=Instantiate(blockDefault.transform, spawnPoint,new Quaternion(), ownerArea.blockFolder.transform);
-        newBlock.GetComponent<BlockState>().area=ownerArea.Area;
-
+        BlockState state=new BlockState();
+        state.moveSpeed = ownerArea.rollSpeed;
+        state.offset = spawnPoint;
+        state.area=ownerArea.Area;
+        ownerArea.ownerBlock[Random.Range(0, ownerArea.ownerBlock.Count-1)].InitBlock(state);
         newBlock.GetComponent<BlockState>().Move(ownerArea.rollVector);
         ownerArea.nowBlocks.Add(newBlock.GetComponent<BlockState>());
     }

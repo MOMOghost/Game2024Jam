@@ -5,7 +5,7 @@ using UnityEngine;
 public class AreaState : MonoBehaviour
 {
     public AreaLocal Area;
-    [SerializeField] List<BlockTemple> ownerBlock;
+    public List<BlockTemple> ownerBlock;
     public List<BlockState> nowBlocks;
     public GameObject blockFolder;
     public float rollSpeed= 1;
@@ -13,7 +13,10 @@ public class AreaState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (ownerBlock.Count == 0)
+        {
+            Debug.LogError("Can't run when no block temple!");
+        }
     }
 
     // Update is called once per frame
