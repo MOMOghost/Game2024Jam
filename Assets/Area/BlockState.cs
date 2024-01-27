@@ -47,7 +47,8 @@ public enum AreaLocal
 public enum BlockEmoji
 {
     Happy,
-    Angry
+    Angry,
+    Count
 }
 public enum BlockType
 {
