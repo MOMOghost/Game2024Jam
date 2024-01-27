@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
+// using UnityEditor.SceneManagement; // 進行打包時需要關掉
 using UnityEngine;
 
 public class BlockState : MonoBehaviour
