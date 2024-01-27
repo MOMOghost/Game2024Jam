@@ -16,6 +16,4 @@ MonoBehaviour:
   - emoji: 0
     sprite: {fileID: 21300000, guid: 54d3b9e500776b1489a3bcda89eaba7b, type: 3}
   - emoji: 1
-    sprite: {fileID: 21300000, guid: bf6b54258a7809743bd94d3b3b74a603, type: 3}
-  - emoji: 2
-    sprite: {fileID: 21300000, guid: f51fb05fb4c3d6340a39e04af72509de, type: 3}
+    sprite: {fileID: 0}
