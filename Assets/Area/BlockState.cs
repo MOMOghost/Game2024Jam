@@ -27,12 +27,8 @@ public class BlockState : MonoBehaviour
     {
         blockRigidBody.velocity= moveVector * moveSpeed;
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.transform.tag=="Area") {
-            Destroy(this.gameObject,0.5f);
-        }
-    }
+    
+    
 }
 public enum AreaLocal
 {
