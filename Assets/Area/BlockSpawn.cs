@@ -13,25 +13,26 @@ public class BlockSpawn : MonoBehaviour
     {
         areaBound=GetComponent<BoxCollider2D>();
         ownerArea=transform.parent.GetComponent<AreaState>();
-
+InvokeRepeating(nameof(SpawnBlock), 0,2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        InvokeRepeating(nameof(SpawnBlock), 3f,0);
+        
     }
     void SpawnBlock()
     {
-        Vector2 spawnPoint = new Vector2(Random.Range(areaBound.offset.x - (areaBound.size.x / 2), areaBound.offset.x + (areaBound.size.x / 2)),
-            Random.Range(areaBound.offset.y - (areaBound.size.y / 2), areaBound.offset.y + (areaBound.size.y / 2)));
+        Vector2 spawnPoint = new Vector2(Random.Range(transform.position.x - (areaBound.size.x / 2), transform.position.x + (areaBound.size.x / 2)),
+            Random.Range(transform.position.y - (areaBound.size.y / 2), transform.position.y + (areaBound.size.y / 2)));
         Transform newBlock=Instantiate(blockDefault.transform, spawnPoint,new Quaternion(), ownerArea.blockFolder.transform);
-        BlockState state=new BlockState();
+        BlockState state= newBlock.GetComponent<BlockState>();
         state.moveSpeed = ownerArea.rollSpeed;
         state.offset = spawnPoint;
         state.area=ownerArea.Area;
         ownerArea.ownerBlock[Random.Range(0, ownerArea.ownerBlock.Count-1)].InitBlock(state);
-        newBlock.GetComponent<BlockState>().Move(ownerArea.rollVector);
+        newBlock.GetComponent<BlockState>().moveVector=ownerArea.rollVector;
+        newBlock.GetComponent<BlockState>().startMove=true;
         ownerArea.nowBlocks.Add(newBlock.GetComponent<BlockState>());
     }
 }
