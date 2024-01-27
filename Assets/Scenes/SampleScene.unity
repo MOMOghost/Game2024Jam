@@ -1850,19 +1850,19 @@ PrefabInstance:
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: BGM.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: cba20f01461a902438a263200ab03bc2, type: 3}
+      objectReference: {fileID: 8300000, guid: 53ea90271d888af4988c2a1dd2936a9c, type: 3}
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: Sound.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 714c89a892365564d88de9db86493f85, type: 3}
+      objectReference: {fileID: 8300000, guid: c7d6830a0de615e4f8bf90363e22e8d9, type: 3}
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: Sound.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 62dec617fd3d7eb4a9077bb01ec2e77f, type: 3}
+      objectReference: {fileID: 8300000, guid: 714c89a892365564d88de9db86493f85, type: 3}
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: Sound.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: c7d6830a0de615e4f8bf90363e22e8d9, type: 3}
+      objectReference: {fileID: 8300000, guid: 62dec617fd3d7eb4a9077bb01ec2e77f, type: 3}
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: Sound.Array.data[3]
       value: 
