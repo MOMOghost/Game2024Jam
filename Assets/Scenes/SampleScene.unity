@@ -1106,6 +1106,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1867966243767925923, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_Size.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_Size.y
+      value: 5.12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1121,6 +1133,6 @@ SceneRoots:
   - {fileID: 1490807023}
   - {fileID: 854040824}
   - {fileID: 1375656989}
-  - {fileID: 2052762141}
   - {fileID: 1968808721}
+  - {fileID: 2052762141}
   - {fileID: 637883891}
