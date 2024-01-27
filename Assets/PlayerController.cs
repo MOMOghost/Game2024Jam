@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
 
 
-        soundController.PlayAudio(soundController.BGM[0], SoundController.AudioType.BGM, false);
+        soundController.PlayAudio(soundController.BGM[0], SoundController.AudioType.BGM, true);
     }
 
     void Update()
