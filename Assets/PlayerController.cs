@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
         }
            
         run = false;
-        Debug.Log("_rigidbody2D.velocity.x : " + _rigidbody2D.velocity.x);
+        // Debug.Log("_rigidbody2D.velocity.x : " + _rigidbody2D.velocity.x);
 
         if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround){
             run = true;
