@@ -34,7 +34,7 @@ public class BlockState : MonoBehaviour
     public void Move()
     {
         blockRigidBody = GetComponent<Rigidbody2D>();
-        Debug.Log(blockRigidBody);
+        // Debug.Log(blockRigidBody);
         blockRigidBody.position+= moveVector * moveSpeed*0.01f;
     }
     

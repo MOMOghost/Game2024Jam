@@ -17,9 +17,9 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    float 收集微笑數量 = 1;
+    float 收集梗圖查克拉 = 0;
+    float 收集領域展開咒力 = 0;
 
-    
 
     #region 移動操作
     public float speed = 1;
@@ -28,11 +28,8 @@ public class PlayerController : MonoBehaviour
     private float _jumpCount;
     private bool _jumpKeyDown;
 
-
     private Vector2 movement;
-
     #endregion
-
 
 
 
@@ -42,6 +39,10 @@ public class PlayerController : MonoBehaviour
     private BoxCollider2D _boxCollider2D;
     private Animator _animator;
     public float healthPoint = 100;
+    public float scorePoint = 0;
+    public Text healthPointText;
+    public Text ScoreText;
+    public Text 梗圖查克拉Text;
     #endregion
 
 
@@ -98,6 +99,9 @@ public class PlayerController : MonoBehaviour
 
         //跳躍狀態判斷
         JumpTrigger();
+
+        //看他變成2.5條貓沒
+        Dead();
     }
 
     public void MoveToLeft()
@@ -128,7 +132,23 @@ public class PlayerController : MonoBehaviour
             
         //soundController.PlayAudio(soundController.Sound[HIT], SoundController.AudioType.Sound, false);
         hit = true;
-        _rigidbody2D.AddForce(Vector2.down * jumpForce);
+        _rigidbody2D.AddForce(Vector2.down * jumpForce *1.5f);
+
+        收集梗圖查克拉--;
+        if(收集梗圖查克拉<=0){
+            收集梗圖查克拉 = 0;
+        }
+        梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
+            
+    }
+
+    private void Dead()
+    {
+        healthPointText.text = healthPoint.ToString();
+        if (healthPoint <= 0)
+        {
+            dead = true;
+        }
     }
 
     //傷害後回復閒置狀態
@@ -186,7 +206,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Score()
+    {
+        scorePoint += 10;
+        ScoreText.text = scorePoint.ToString();
+
+        if(scorePoint > 30){
+            收集領域展開咒力++;
+        }
     
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -199,19 +228,21 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("碰撞到了具有 BlockState 组件的物体");
 
             if(  blockStateComponent.emoji == BlockEmoji.Happy){
-                // Debug.Log("碰撞到了具有 BlockState 组件的笑臉物体");
-                //  Debug.Log("笑笑笑笑笑笑笑笑笑笑笑笑笑笑笑笑笑的笑臉物体");
-                 收集微笑數量++;
+                收集梗圖查克拉++;
+                梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
 
-                // Debug.Log("收集微笑數量 總數量是 : " + 收集微笑數量);
-
-                if(收集微笑數量 == 3){
-                    //     Debug.Log("出現梗圖");
-                    // Debug.Log("增加得分");
-                    
-                    收集微笑數量 = 0;
+                if(收集梗圖查克拉 == 3){
+                    Score();
+                    收集梗圖查克拉 = 0;
+                    梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
                 }
-            
+            }else{
+                收集梗圖查克拉--;
+                if(收集梗圖查克拉<=0){
+                    收集梗圖查克拉 = 0;
+                }
+
+                梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
             }
          
         }
