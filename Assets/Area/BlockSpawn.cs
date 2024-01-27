@@ -19,7 +19,7 @@ public class BlockSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        InvokeRepeating(nameof(SpawnBlock), 3f,0);
     }
     void SpawnBlock()
     {

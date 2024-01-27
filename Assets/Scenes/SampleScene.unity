@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &56282994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56282995}
+  m_Layer: 6
+  m_Name: Blocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56282995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56282994}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 854040824}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311303635
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854040824}
   - component: {fileID: 854040825}
+  - component: {fileID: 854040826}
   m_Layer: 0
   m_Name: Area2
   m_TagString: Untagged
@@ -592,6 +624,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1238688465}
+  - {fileID: 56282995}
   - {fileID: 843283767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -640,6 +673,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.88, y: 12.63}
   m_EdgeRadius: 0
+--- !u!114 &854040826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854040823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f12ff49887035441985d50caa6b5797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Area: 1
+  ownerBlock:
+  - {fileID: 11400000, guid: 87013129f9f13b6488333e6cbd130821, type: 2}
+  - {fileID: 11400000, guid: 90f7f1fa9a083f44fa7774760dd5b566, type: 2}
+  nowBlocks: []
+  blockFolder: {fileID: 56282994}
+  rollSpeed: 20
+  rollVector: {x: 0, y: 1}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375656989}
   - component: {fileID: 1375656990}
+  - component: {fileID: 1375656991}
   m_Layer: 0
   m_Name: Area3
   m_TagString: Untagged
@@ -896,6 +950,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.88, y: 12.63}
   m_EdgeRadius: 0
+--- !u!114 &1375656991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375656988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f12ff49887035441985d50caa6b5797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Area: 2
+  ownerBlock:
+  - {fileID: 11400000, guid: c28489555b39e9f4c9c3dfb7feced453, type: 2}
+  - {fileID: 11400000, guid: 00ad15f47055be546ad536c01f32ec0a, type: 2}
+  nowBlocks: []
+  blockFolder: {fileID: 311303635}
+  rollSpeed: 12
+  rollVector: {x: 0, y: 1}
 --- !u!1 &1415978070
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1490807023}
   - component: {fileID: 1490807024}
+  - component: {fileID: 1490807025}
   m_Layer: 0
   m_Name: Area1
   m_TagString: Untagged
@@ -1064,6 +1139,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.88, y: 12.63}
   m_EdgeRadius: 0
+--- !u!114 &1490807025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490807022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f12ff49887035441985d50caa6b5797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Area: 0
+  ownerBlock:
+  - {fileID: 11400000, guid: 4754b898a006ad1489e6f11474a49664, type: 2}
+  - {fileID: 11400000, guid: 21b3e51c52e0b254993c72f434cd1b3a, type: 2}
+  - {fileID: 11400000, guid: a146acc42ec2c9845b363fb5792919c3, type: 2}
+  nowBlocks: []
+  blockFolder: {fileID: 1415978070}
+  rollSpeed: 10
+  rollVector: {x: 0, y: 1}
 --- !u!4 &1513242248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4296080256198472448, guid: 36c9f3381b0b26d40a8f3ba9ecdd005b, type: 3}
