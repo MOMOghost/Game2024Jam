@@ -24,7 +24,7 @@ public class BlockState : MonoBehaviour
         blockCollider.size=new Vector3(size.x,size.y,0);
         
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if(startMove)
         {
@@ -48,7 +48,6 @@ public enum BlockEmoji
 {
     Happy,
     Angry,
-    StarBust,
     Count
 }
 public enum BlockType
