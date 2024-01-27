@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SupSystem;
+using Unity.Mathematics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
+    float 收集微笑數量 = 1;
+
+    
 
     #region 移動操作
     public float speed = 1;
@@ -172,6 +176,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        
+
         //触碰平台重置跳跃
         if (_boxCollider2D.IsTouchingLayers())
         {
@@ -179,6 +185,40 @@ public class PlayerController : MonoBehaviour
             _jumpCount = 0;
         }
     }
+
+    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 检查碰撞到的物体是否有指定的组件
+        BlockState blockStateComponent = collision.gameObject.GetComponent<BlockState>();
+
+        if (blockStateComponent != null)
+        {
+            // 碰撞到了具有 BlockState 组件的物体
+            // Debug.Log("碰撞到了具有 BlockState 组件的物体");
+
+            if(  blockStateComponent.emoji == BlockEmoji.Happy){
+                // Debug.Log("碰撞到了具有 BlockState 组件的笑臉物体");
+                //  Debug.Log("笑笑笑笑笑笑笑笑笑笑笑笑笑笑笑笑笑的笑臉物体");
+                 收集微笑數量++;
+
+                // Debug.Log("收集微笑數量 總數量是 : " + 收集微笑數量);
+
+                if(收集微笑數量 == 3){
+                    //     Debug.Log("出現梗圖");
+                    // Debug.Log("增加得分");
+                    
+                    收集微笑數量 = 0;
+                }
+            
+            }
+         
+        }
+    }
+
+    
+
 
 
     bool GroundSound = false;

@@ -5633,6 +5633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Area1
       objectReference: {fileID: 0}
+    - target: {fileID: 488974843796734521, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4901570895485204721, guid: 8e09dc6bf88723244b09a3ced4e77c08, type: 3}
       propertyPath: rollSpeed
       value: 5
@@ -5832,6 +5836,10 @@ PrefabInstance:
     - target: {fileID: 3107630549528831741, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_Offset.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: hit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: soundController
