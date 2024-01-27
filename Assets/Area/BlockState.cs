@@ -8,24 +8,34 @@ public class BlockState : MonoBehaviour
 {
     public AreaLocal area;
     public BlockEmoji emoji;
-    public Vector2 offset,size;
+    public Vector2 offset, size,moveVector;
     public Sprite blockImage;
-    public float moveSpeed;
+    public float moveSpeed=1;
+    public bool startMove=false;
     Rigidbody2D blockRigidBody;
     BoxCollider2D blockCollider;
     // Start is called before the first frame update
     void Start()
     {
-        blockRigidBody=GetComponent<Rigidbody2D>();
+        blockRigidBody= GetComponent<Rigidbody2D>();
         blockCollider = transform.AddComponent<BoxCollider2D>();
         transform.Find("Texture").GetComponent<SpriteRenderer>().sprite= blockImage;
         transform.position= offset;
         blockCollider.size=new Vector3(size.x,size.y,0);
         
     }
-    public void Move(Vector2 moveVector)
+    private void Update()
     {
-        blockRigidBody.velocity= moveVector * moveSpeed;
+        if(startMove)
+        {
+            Move();
+        }
+    }
+    public void Move()
+    {
+        blockRigidBody = GetComponent<Rigidbody2D>();
+        Debug.Log(blockRigidBody);
+        blockRigidBody.position+= moveVector * moveSpeed;
     }
     
     

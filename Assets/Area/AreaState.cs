@@ -29,8 +29,8 @@ public class AreaState : MonoBehaviour
         if (collision.transform.tag == "Block")
         {
             nowBlocks.Remove(collision.GetComponent<BlockState>());
-        }
         Destroy(collision.gameObject, 0.5f);
+        }
         
     }
 }

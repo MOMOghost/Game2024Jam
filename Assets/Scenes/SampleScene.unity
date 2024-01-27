@@ -338,18 +338,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 686348866}
     m_Modifications:
-    - target: {fileID: 1068145621805765438, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b0d78080653811245be7c3835952824e, type: 3}
-    - target: {fileID: 1068145621805765438, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1068145621805765438, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5557437080159315548, guid: 3b0f9ddf6cfbec84591eab76e67d5763, type: 3}
       propertyPath: m_Name
       value: "\u5FAE\u7B11\u5E73\u53F0"
@@ -419,7 +407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &686348866
 Transform:
   m_ObjectHideFlags: 0
@@ -691,7 +679,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90f7f1fa9a083f44fa7774760dd5b566, type: 2}
   nowBlocks: []
   blockFolder: {fileID: 56282994}
-  rollSpeed: 20
+  rollSpeed: 0.03
   rollVector: {x: 0, y: 1}
 --- !u!1 &963194225
 GameObject:
@@ -795,7 +783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238688465}
   - component: {fileID: 1238688466}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -968,7 +956,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00ad15f47055be546ad536c01f32ec0a, type: 2}
   nowBlocks: []
   blockFolder: {fileID: 311303635}
-  rollSpeed: 12
+  rollSpeed: 0.07
   rollVector: {x: 0, y: 1}
 --- !u!1 &1415978070
 GameObject:
@@ -1158,7 +1146,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a146acc42ec2c9845b363fb5792919c3, type: 2}
   nowBlocks: []
   blockFolder: {fileID: 1415978070}
-  rollSpeed: 10
+  rollSpeed: 0.01
   rollVector: {x: 0, y: 1}
 --- !u!4 &1513242248 stripped
 Transform:
@@ -1544,6 +1532,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3107630549528831741, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3107630549528831741, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 5.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -1566,6 +1562,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4267214438422921996, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802724575844386814, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
