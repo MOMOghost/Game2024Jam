@@ -37,11 +37,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider2D;
     private Animator _animator;
+    public float healthPoint = 100;
     #endregion
 
 
     #region 場景互動
     public LayerMask platformLayer;
+    
+    //天地壩傷害
+    public float trapDamage = 10;
     #endregion
 
     #region 角色動畫
@@ -108,11 +112,27 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal"); 
         // Debug.Log("Move");
-        _rigidbody2D.velocity = new Vector2(movement.x * speed, _rigidbody2D.velocity.y);
-
-        
+        _rigidbody2D.velocity = new Vector2(movement.x * speed, _rigidbody2D.velocity.y);   
     }
 
+    public void SpikeTrigger()
+    {
+        //傷害不重複
+        if (!hit){
+            healthPoint -= trapDamage;
+        }
+            
+        //soundController.PlayAudio(soundController.Sound[HIT], SoundController.AudioType.Sound, false);
+        hit = true;
+        _rigidbody2D.AddForce(Vector2.down * jumpForce);
+    }
+
+    //傷害後回復閒置狀態
+    private void RecoverIdle()
+    {
+        if (hit)
+            hit = false;
+    }
 
 
 
