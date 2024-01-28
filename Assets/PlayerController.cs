@@ -262,7 +262,7 @@ public class PlayerController : MonoBehaviour
     {
         isGround = _boxCollider2D.IsTouchingLayers(platformLayer);
 
-        if(isGround && GroundSound){
+        if(isGround && GroundSound && soundController != null){
             GroundSound = false;
             soundController.PlayAudio(soundController.Sound[2], SoundController.AudioType.Sound, false);
         }
