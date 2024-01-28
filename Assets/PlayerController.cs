@@ -106,13 +106,13 @@ public class PlayerController : MonoBehaviour
     public void MoveToLeft()
     {
         movement.x = -1;
-        Debug.Log("MoveToLeft" + movement.x);
+        // Debug.Log("MoveToLeft" + movement.x);
     }
 
     public void MoveToRight()
     {
         movement.x = 1;
-        Debug.Log("MoveToRight" + movement.x);
+        // Debug.Log("MoveToRight" + movement.x);
     }
 
     private void Move()
@@ -181,6 +181,7 @@ public class PlayerController : MonoBehaviour
         //一段跳
         if (_jumpKeyDown && isGround)
         {
+            // Debug.Log("一段跳一段跳一段跳一段跳一段跳");
             _jumpCount++;
             _rigidbody2D.AddForce(Vector2.up * jumpForce);
             jump = true;
@@ -190,6 +191,7 @@ public class PlayerController : MonoBehaviour
         //二段跳
         if (_jumpKeyDown && !isGround)
         {
+            // Debug.Log("二段跳二段跳二段跳二段跳二段跳");
             jump = false;
             doubleJump = true;
             _jumpCount++;
@@ -279,15 +281,22 @@ public class PlayerController : MonoBehaviour
     private void ChangeAnimator()
     {
         fall = false;
+
+
         if (_rigidbody2D.velocity.y < 0){
             fall = true;
             GroundSound = true;
+
+            //    if(doubleJump){
+            //     // Debug.Log("fallfallfallfallfallfallfallfallfallfall");
+            // }
         }
            
 
         jump = false;
         if (_rigidbody2D.velocity.y > 1.41){  //1.40275  // 0
              jump = true;
+                // Debug.Log("jumpjumpjumpjumpjumpjumpjumpjumpjumpjumpjump");
         }
            
         run = false;
@@ -296,14 +305,26 @@ public class PlayerController : MonoBehaviour
         if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround){
             run = true;
             soundController.PlayAudio(soundController.Sound[1], SoundController.AudioType.Sound, false);
+
+            //   if(doubleJump){
+            //     // Debug.Log("runrunrunrunrunrunrunrunrunrunrun");
+            // }
         }
             
         if (_rigidbody2D.velocity.x < 0){
             transform.localScale = new Vector3(-0.3551f, transform.localScale.y, transform.localScale.z);
+
+            //   if(doubleJump){
+            //     Debug.Log("333333333333333333");
+            // }
         }
        
         if (_rigidbody2D.velocity.x > 0){
             transform.localScale = new Vector3(0.3551f, transform.localScale.y, transform.localScale.z);
+
+            //  if(doubleJump){
+            //     Debug.Log("4444444444444");
+            // }
         }
             
         _animator.SetBool(Hit, hit);
