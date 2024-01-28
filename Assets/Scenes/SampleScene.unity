@@ -5658,6 +5658,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b6ca8d85627a69c4a94cb68770fa20f7, type: 3}
   - {fileID: 21300000, guid: 0ed547880d8b13d43b61e312de64dc01, type: 3}
   - {fileID: 21300000, guid: 6496d9b47229b9243be05b791ff11996, type: 3}
+  "\u6897\u5716": {fileID: 1684589969}
 --- !u!4 &1124021457
 Transform:
   m_ObjectHideFlags: 0
@@ -8751,13 +8752,14 @@ GameObject:
   - component: {fileID: 1684589970}
   - component: {fileID: 1684589971}
   - component: {fileID: 1684589972}
+  - component: {fileID: 1684589973}
   m_Layer: 6
   m_Name: MEMETexture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1684589970
 Transform:
   m_ObjectHideFlags: 0
@@ -8846,6 +8848,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1684589973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684589969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c1f5c097c1cf74abf1e37a8c94d212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1769479350
 GameObject:
   m_ObjectHideFlags: 0
@@ -10860,6 +10874,10 @@ PrefabInstance:
       propertyPath: soundController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
+      propertyPath: "\u6897\u5716\u89F8\u767C\u5668"
+      value: 
+      objectReference: {fileID: 1124021456}
     - target: {fileID: 9108488901325553632, guid: 28d2483179f7ff74bbbf96f46ff99367, type: 3}
       propertyPath: "\u6897\u5716\u67E5\u514B\u62C9Text"
       value: 

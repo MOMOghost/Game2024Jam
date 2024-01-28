@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     float 收集梗圖查克拉 = 0;
     float 收集領域展開咒力 = 0;
 
+    
+
 
     #region 移動操作
     public float speed = 1;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     #region 場景互動
     public LayerMask platformLayer;
+    public 梗圖觸發 梗圖觸發器;
     
     //天地壩傷害
     public float trapDamage = 10;
@@ -133,11 +136,14 @@ public class PlayerController : MonoBehaviour
         hit = true;
         _rigidbody2D.AddForce(Vector2.down * jumpForce *1.5f);
 
-        收集梗圖查克拉--;
-        if(收集梗圖查克拉<=0){
-            收集梗圖查克拉 = 0;
-        }
-        梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
+
+        //-----------------這段打開會變很難
+            // 收集梗圖查克拉--;
+            // if(收集梗圖查克拉<=0){
+            //     收集梗圖查克拉 = 0;
+            // }
+            // 梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
+        //-----------------這段打開會變很難
 
         GetComponent<Animator>().SetBool("hit", false);
         Dead();
@@ -242,6 +248,7 @@ public class PlayerController : MonoBehaviour
                     Score();
                     收集梗圖查克拉 = 0;
                     梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
+                    梗圖觸發器.開啟梗圖();
                 }
             }else{
                 收集梗圖查克拉--;
