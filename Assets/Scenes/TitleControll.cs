@@ -10,7 +10,7 @@ public class TitleControll:MonoBehaviour
     static public void GoStart()
     {
         SceneManager.LoadScene(1);
-        
+        Time.timeScale= 1.0f;
     }
     static public void Quit()
     {
