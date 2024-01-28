@@ -77,8 +77,8 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
-
-        soundController= FindAnyObjectByType<SoundController>();
+        healthPointText.text = healthPoint.ToString();
+        soundController = FindAnyObjectByType<SoundController>();
         soundController.PlayAudio(soundController.BGM[0], SoundController.AudioType.BGM, true);
     }
 
@@ -160,9 +160,13 @@ public class PlayerController : MonoBehaviour
         healthPointText.text = healthPoint.ToString();
         if (healthPoint <= 0)
         {
-            if(!dead)Instantiate(DeadScene);
+            GameObject game;
+            if (!dead)
+            {
+                game = Instantiate(DeadScene);
+                game.GetComponent<DeadScene>().text.text=scorePoint.ToString();
+            }
             dead = true;
-            Time.timeScale = 0;
             soundController.StopPlay(soundController.BGM[0].name);
             soundController.PlayAudio("死亡", SoundController.AudioType.Special);
         }
