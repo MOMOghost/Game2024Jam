@@ -12,4 +12,10 @@ public class TitleControll:MonoBehaviour
         SceneManager.LoadScene(1);
         
     }
+    static public void Quit()
+    {
+        Application.Quit();
+
+    }
+    
 }
