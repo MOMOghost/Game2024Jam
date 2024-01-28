@@ -6,10 +6,11 @@ using UnityEngine;
 public class BGTemplate : ScriptableObject
 {
     public float rollSpeed;
+    public BGState BGState;
     public Sprite BGImage;
-    public void InitBG(AreaState Area)
+    public void InitBG(SpriteRenderer renderer)
     {
-        
+       renderer.sprite = BGImage;
     }
 
 }
