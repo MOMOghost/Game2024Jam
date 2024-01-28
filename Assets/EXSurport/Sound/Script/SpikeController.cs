@@ -10,7 +10,7 @@ public class SpikeController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("13");
+            // Debug.Log("13");
             collision.gameObject.GetComponent<PlayerController>().SpikeTrigger();
         }
 
