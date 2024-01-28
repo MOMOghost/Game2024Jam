@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _animator = GetComponent<Animator>();
 
-
+        soundController= FindAnyObjectByType<SoundController>();
         soundController.PlayAudio(soundController.BGM[0], SoundController.AudioType.BGM, true);
     }
 
