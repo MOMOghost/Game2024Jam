@@ -274,9 +274,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
-
-
 
     bool GroundSound = false;
 
@@ -289,11 +286,34 @@ public class PlayerController : MonoBehaviour
 
         if(isGround && GroundSound && soundController != null){
             GroundSound = false;
-            soundController.PlayAudio(soundController.Sound[2], SoundController.AudioType.Sound, false);
+            //soundController.PlayAudio(soundController.Sound[2], SoundController.AudioType.Sound, false);
+        }
+
+        if(!isGround){
+              RunSoundCount = 0;
         }
     }
 
 
+    private bool canTrigger = true;
+    private IEnumerator PlayAudioWithDelay()
+    {
+        Debug.Log("1111111111111111111");
+        // 触发音频播放
+        soundController.PlayAudio(soundController.Sound[1], SoundController.AudioType.Sound, false);
+
+        // 设置延迟时间为两秒
+        float delayTime = 2f;
+
+        // 等待两秒
+        yield return new WaitForSeconds(delayTime);
+
+        // 允许再次触发
+        canTrigger = true;
+    }
+
+
+    int RunSoundCount = 0;
 
     /*
      * 角色動畫
@@ -320,17 +340,23 @@ public class PlayerController : MonoBehaviour
         }
            
         run = false;
+    
+        
         // Debug.Log("_rigidbody2D.velocity.x : " + _rigidbody2D.velocity.x);
 
         if (Math.Abs(_rigidbody2D.velocity.x) > 0 && isGround){
             run = true;
-            soundController.PlayAudio(soundController.Sound[1], SoundController.AudioType.Sound, false);
+            RunSoundCount++;
 
-            //   if(doubleJump){
-            //     // Debug.Log("runrunrunrunrunrunrunrunrunrunrun");
-            // }
+            if(RunSoundCount < 5){ 
+                soundController.PlayAudio(soundController.Sound[1], SoundController.AudioType.Sound, false);
+            }
+    
         }
-            
+
+
+
+   
         if (_rigidbody2D.velocity.x < 0){
             transform.localScale = new Vector3(-0.3551f, transform.localScale.y, transform.localScale.z);
 
