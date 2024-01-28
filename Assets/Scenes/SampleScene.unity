@@ -6430,7 +6430,11 @@ PrefabInstance:
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: BGM.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 53ea90271d888af4988c2a1dd2936a9c, type: 3}
+      objectReference: {fileID: 8300000, guid: 0d442df8b55e35a47a9f84ee678c329c, type: 3}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Special.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
       propertyPath: Sound.Array.data[0]
       value: 
@@ -6447,6 +6451,10 @@ PrefabInstance:
       propertyPath: Sound.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: a2430d4863549484aba0b1147d82b976, type: 3}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Special.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fc76e22b4ff1824d8e1fc4133061921, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

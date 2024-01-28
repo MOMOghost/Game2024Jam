@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using static Unity.VisualScripting.Member;
+
 namespace SupSystem
 {
     public class SoundController : MonoBehaviour
@@ -13,7 +15,7 @@ namespace SupSystem
         public List<AudioClip> Sound;
         public List<AudioClip> Special;
         public bool WipSence;
-        public List<GameObject> playingAudio;
+        public List<AudioSource> playingAudio;
         [SerializeField] GameObject AudioSource;
         [SerializeField] AudioMixer Mixer;
         void Start()
@@ -39,8 +41,9 @@ namespace SupSystem
             source.outputAudioMixerGroup = Mixer.FindMatchingGroups(Enum.GetName(typeof(AudioType), audioType))[0];
             source.loop = isLoop;
             source.clip = sound;
+            playingAudio.Add(source);
             source.Play();
-
+            if (!isLoop) StartCoroutine(RemoveSound(source, source.clip.length + 0.1f));
         }
         public void PlayAudio(string sound, AudioType audioType, bool isLoop = false)
         {
@@ -70,24 +73,30 @@ namespace SupSystem
                     Debug.LogError("Don't input other type without List.");
                     break;
             }
-            foreach (AudioClip clip in TargetList)
-            {
-                if (sound == clip.name)
-                {
-                    source.clip = clip;
-                    break;
-                }
-            }
+            source.clip=TargetList.Find(e=>e.name== sound);
+            playingAudio.Add(source);
             if (source.clip == null)
             {
                 Debug.LogWarning("Can't find the music in this list.");
             }
             source.Play();
-
+            if (!isLoop) StartCoroutine(RemoveSound(source, source.clip.length + 0.1f));
+        }
+        public void StopPlay(string name)
+        {
+            AudioSource source=playingAudio.Find(e=>e.clip.name== name);
+            source.Pause(); StartCoroutine(RemoveSound(source, source.clip.length + 0.1f));
         }
         public void ControllMixerVolume(AudioType audioType, float vol)
         {
             Mixer.SetFloat(Enum.GetName(typeof(AudioType), audioType) + "Vol", vol);
+        }
+        IEnumerator RemoveSound(AudioSource sound,float time)
+        {
+            yield return new WaitForSeconds(time);
+            playingAudio.Remove(sound);
+            Destroy(sound.gameObject, 0);
+
         }
         public enum AudioType
         {

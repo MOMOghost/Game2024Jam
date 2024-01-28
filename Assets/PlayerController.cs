@@ -151,7 +151,8 @@ public class PlayerController : MonoBehaviour
             if(!dead)Instantiate(DeadScene);
             dead = true;
             Time.timeScale = 0;
-            
+            soundController.StopPlay(soundController.BGM[0].name);
+            soundController.PlayAudio("死亡", SoundController.AudioType.Special);
         }
     }
 
