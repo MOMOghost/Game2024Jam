@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]  SoundController soundController;
     #endregion
     [SerializeField] GameObject DeadScene;
+    [SerializeField] GameObject Setting;
     float 收集梗圖查克拉 = 0;
     float 收集領域展開咒力 = 0;
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public Text healthPointText;
     public Text ScoreText;
     public Text 梗圖查克拉Text;
+   
     #endregion
 
 
@@ -374,13 +376,17 @@ public class PlayerController : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0f; // 暫停遊戲時間
-        // 在這裡可以添加其他暫停遊戲時的邏輯，例如顯示暫停菜單等
+                             // 在這裡可以添加其他暫停遊戲時的邏輯，例如顯示暫停菜單等
+        if (!Setting.activeSelf)
+            Setting.SetActive(true);
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1f; // 恢復遊戲時間
-        // 在這裡可以添加其他恢復遊戲時的邏輯
+                             // 在這裡可以添加其他恢復遊戲時的邏輯
+        if (Setting.activeSelf)
+            Setting.SetActive(false);
     }
     
 }
