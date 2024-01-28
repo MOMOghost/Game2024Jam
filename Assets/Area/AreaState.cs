@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class AreaState : MonoBehaviour
 {
+
     public AreaLocal Area;
     public List<BlockTemple> ownerBlock;
+    public List<BGTemplate> ownerBG;
     public EmojiControll emojis;
     public List<BlockState> nowBlocks;
     public GameObject blockFolder;
