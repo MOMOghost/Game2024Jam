@@ -5640,7 +5640,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u6897\u5716\u6E05\u55AE":
-  - {fileID: 21300000, guid: 54d3b9e500776b1489a3bcda89eaba7b, type: 3}
   - {fileID: 21300000, guid: bf6b54258a7809743bd94d3b3b74a603, type: 3}
   - {fileID: 21300000, guid: f51fb05fb4c3d6340a39e04af72509de, type: 3}
   - {fileID: 21300000, guid: 661387a3049f917459a2e3e73fa42e3b, type: 3}
@@ -5659,6 +5658,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0ed547880d8b13d43b61e312de64dc01, type: 3}
   - {fileID: 21300000, guid: 6496d9b47229b9243be05b791ff11996, type: 3}
   "\u6897\u5716": {fileID: 1684589969}
+  soundController: {fileID: 0}
 --- !u!4 &1124021457
 Transform:
   m_ObjectHideFlags: 0
