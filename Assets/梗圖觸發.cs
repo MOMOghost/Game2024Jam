@@ -11,6 +11,12 @@ public class 梗圖觸發 : MonoBehaviour
 
     public GameObject 梗圖;//SpriteRenderer
 
+    public GameObject 無量空處;//SpriteRenderer
+        public GameObject 無量空處1;//SpriteRenderer
+            public GameObject 無量空處2;//SpriteRenderer
+                public GameObject 無量空處3;//SpriteRenderer
+                  public GameObject 無量空處4;//SpriteRenderer
+
         [SerializeField]  SoundController soundController;
    
     // Start is called before the first frame update
@@ -23,10 +29,16 @@ public class 梗圖觸發 : MonoBehaviour
     public void 開啟梗圖(){
        // 梗圖.sprite.texture;
 
-       設置隨機梗圖();
+    //    設置隨機梗圖();
 
-       梗圖.SetActive(true);
+    //    梗圖.SetActive(true);
+
+
+
+       領域展開();
     }
+
+    
 
 
     void 設置隨機梗圖(){
@@ -35,7 +47,6 @@ public class 梗圖觸發 : MonoBehaviour
         int randomInt = random.Next(0, 16);
 
         梗圖.GetComponent<SpriteRenderer>().sprite = 梗圖清單[randomInt];
-
 
 
         switch(randomInt) {
@@ -87,6 +98,34 @@ public class 梗圖觸發 : MonoBehaviour
         }
         //soundController.PlayAudio(soundController.BGM[randomInt], SoundController.AudioType.BGM, true);
 
+    }
+
+
+    IEnumerator ActivateChildrenWithDelayCoroutine()
+    {
+        // 遍历父物体底下的所有子物体
+        for (int i = 0; i < 無量空處.transform.childCount; i++)
+        {
+            // 获取第i个子物体
+            GameObject child = 無量空處.transform.GetChild(i).gameObject;
+
+
+            System.Random random = new System.Random();
+            int randomInt = random.Next(0, 16);
+            child.GetComponent<SpriteRenderer>().sprite = 梗圖清單[randomInt];
+
+            // 激活子物体
+            child.SetActive(true);
+
+            // 等待0.2秒
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    void 領域展開(){
+        StartCoroutine(ActivateChildrenWithDelayCoroutine());
+        soundController.StopPlay(soundController.BGM[0].name.ToString());
+        soundController.PlayAudio(soundController.BGM[1], SoundController.AudioType.BGM, false);
     }
 
     // Update is called once per frame
