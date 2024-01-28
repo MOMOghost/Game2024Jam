@@ -104,6 +104,12 @@ public class PlayerController : MonoBehaviour
 
         //看他變成2.5條貓沒
         //Dead();受傷再測就好
+
+        //暫停功能
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
     }
 
     public void MoveToLeft()
@@ -340,6 +346,37 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool(DoubleJump, doubleJump);
         _animator.SetBool(Jump, jump);
         _animator.SetBool(Run, run);
+    }
+
+
+    private bool isPaused = false;
+
+
+
+    void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0f; // 暫停遊戲時間
+        // 在這裡可以添加其他暫停遊戲時的邏輯，例如顯示暫停菜單等
+    }
+
+    void ResumeGame()
+    {
+        Time.timeScale = 1f; // 恢復遊戲時間
+        // 在這裡可以添加其他恢復遊戲時的邏輯
     }
     
 }
