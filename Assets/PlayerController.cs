@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
         // Start is called before the first frame update
     [SerializeField]  SoundController soundController;
     #endregion
-
-
+    [SerializeField] GameObject DeadScene;
     float 收集梗圖查克拉 = 0;
     float 收集領域展開咒力 = 0;
 
@@ -101,7 +100,7 @@ public class PlayerController : MonoBehaviour
         JumpTrigger();
 
         //看他變成2.5條貓沒
-        Dead();
+        //Dead();受傷再測就好
     }
 
     public void MoveToLeft()
@@ -141,6 +140,7 @@ public class PlayerController : MonoBehaviour
         梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
 
         GetComponent<Animator>().SetBool("hit", false);
+        Dead();
     }
 
     private void Dead()
@@ -148,7 +148,10 @@ public class PlayerController : MonoBehaviour
         healthPointText.text = healthPoint.ToString();
         if (healthPoint <= 0)
         {
+            if(!dead)Instantiate(DeadScene);
             dead = true;
+            Time.timeScale = 0;
+            
         }
     }
 
