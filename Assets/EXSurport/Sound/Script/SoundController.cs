@@ -13,7 +13,7 @@ namespace SupSystem
         public List<AudioClip> Sound;
         public List<AudioClip> Special;
         public bool WipSence;
-        public List<GameObject> playingAudio;
+        public List<AudioSource> playingAudio;
         [SerializeField] GameObject AudioSource;
         [SerializeField] AudioMixer Mixer;
         void Start()
@@ -70,20 +70,18 @@ namespace SupSystem
                     Debug.LogError("Don't input other type without List.");
                     break;
             }
-            foreach (AudioClip clip in TargetList)
-            {
-                if (sound == clip.name)
-                {
-                    source.clip = clip;
-                    break;
-                }
-            }
+            source.clip=TargetList.Find(e=>e.name== sound);
+            playingAudio.Add(source);
             if (source.clip == null)
             {
                 Debug.LogWarning("Can't find the music in this list.");
             }
             source.Play();
 
+        }
+        public void StopPlay(string name)
+        {
+           playingAudio.Find(e=>e.clip.name== name);
         }
         public void ControllMixerVolume(AudioType audioType, float vol)
         {
