@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using static Unity.VisualScripting.Member;
+
 namespace SupSystem
 {
     public class SoundController : MonoBehaviour
@@ -39,8 +41,9 @@ namespace SupSystem
             source.outputAudioMixerGroup = Mixer.FindMatchingGroups(Enum.GetName(typeof(AudioType), audioType))[0];
             source.loop = isLoop;
             source.clip = sound;
+            playingAudio.Add(source);
             source.Play();
-            if (!isLoop) Destroy(source.gameObject, source.clip.length);
+            if (!isLoop) StartCoroutine(RemoveSound(source, source.clip.length + 0.1f));
         }
         public void PlayAudio(string sound, AudioType audioType, bool isLoop = false)
         {
@@ -77,17 +80,23 @@ namespace SupSystem
                 Debug.LogWarning("Can't find the music in this list.");
             }
             source.Play();
-            if (!isLoop) Destroy(source.gameObject, source.clip.length);
+            if (!isLoop) StartCoroutine(RemoveSound(source, source.clip.length + 0.1f));
         }
         public void StopPlay(string name)
         {
             AudioSource source=playingAudio.Find(e=>e.clip.name== name);
-            source.Pause();
-            playingAudio.Remove(source);
+            source.Pause(); StartCoroutine(RemoveSound(source, source.clip.length + 0.1f));
         }
         public void ControllMixerVolume(AudioType audioType, float vol)
         {
             Mixer.SetFloat(Enum.GetName(typeof(AudioType), audioType) + "Vol", vol);
+        }
+        IEnumerator RemoveSound(AudioSource sound,float time)
+        {
+            yield return new WaitForSeconds(time);
+            playingAudio.Remove(sound);
+            Destroy(sound.gameObject, 0);
+
         }
         public enum AudioType
         {
