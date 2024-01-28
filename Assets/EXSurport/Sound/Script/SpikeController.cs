@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class SpikeController : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        
+        if (collision.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerController>().SpikeTrigger();
+            Debug.Log("13");
+            collision.gameObject.GetComponent<PlayerController>().SpikeTrigger();
         }
 
     }

@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         if (!hit){
             healthPoint -= trapDamage;
         }
-            
+        GetComponent<Animator>().SetBool("hit",true);
         //soundController.PlayAudio(soundController.Sound[HIT], SoundController.AudioType.Sound, false);
         hit = true;
         _rigidbody2D.AddForce(Vector2.down * jumpForce *1.5f);
@@ -139,7 +139,8 @@ public class PlayerController : MonoBehaviour
             收集梗圖查克拉 = 0;
         }
         梗圖查克拉Text.text = 收集梗圖查克拉.ToString();
-            
+
+        GetComponent<Animator>().SetBool("hit", false);
     }
 
     private void Dead()
