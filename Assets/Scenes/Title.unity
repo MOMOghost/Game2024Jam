@@ -321,7 +321,7 @@ RectTransform:
   m_GameObject: {fileID: 980053911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1444883614}
@@ -370,7 +370,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.5
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8039216, g: 0.24705882, b: 0.2859262, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -495,19 +495,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: 4228933a5c40ec34eabd801a85d94099, type: 3}
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Title
+  m_Text: "\u5FCD\u8C93\u95D6\u5929\u95DC"
 --- !u!222 &1189920800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -766,6 +766,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a26e4b3d6b964b44a60f579d2a42bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1713837358
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8108293
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.3821774
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.5110044
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709362, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275384888265709363, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: m_Name
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: WipSence
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: BGM.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Sound.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: BGM.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 53ea90271d888af4988c2a1dd2936a9c, type: 3}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Sound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c7d6830a0de615e4f8bf90363e22e8d9, type: 3}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Sound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 714c89a892365564d88de9db86493f85, type: 3}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Sound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 62dec617fd3d7eb4a9077bb01ec2e77f, type: 3}
+    - target: {fileID: 6990216579010605021, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
+      propertyPath: Sound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a2430d4863549484aba0b1147d82b976, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 190faed21fde35b4bbf4292b9955c547, type: 3}
 --- !u!1 &1855230226
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,3 +1023,4 @@ SceneRoots:
   - {fileID: 204028387}
   - {fileID: 1444883614}
   - {fileID: 1855230229}
+  - {fileID: 1713837358}
