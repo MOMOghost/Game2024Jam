@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
             }
             dead = true;
             soundController.StopPlay(soundController.BGM[0].name);
-            soundController.PlayAudio("死亡", SoundController.AudioType.Special);
+            soundController.PlayAudio("死亡_0128", SoundController.AudioType.Special);
         }
     }
 
