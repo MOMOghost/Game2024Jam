@@ -40,7 +40,7 @@ namespace SupSystem
             source.loop = isLoop;
             source.clip = sound;
             source.Play();
-
+            if (!isLoop) Destroy(source.gameObject, source.clip.length);
         }
         public void PlayAudio(string sound, AudioType audioType, bool isLoop = false)
         {
@@ -77,11 +77,13 @@ namespace SupSystem
                 Debug.LogWarning("Can't find the music in this list.");
             }
             source.Play();
-
+            if (!isLoop) Destroy(source.gameObject, source.clip.length);
         }
         public void StopPlay(string name)
         {
-           playingAudio.Find(e=>e.clip.name== name);
+            AudioSource source=playingAudio.Find(e=>e.clip.name== name);
+            source.Pause();
+            playingAudio.Remove(source);
         }
         public void ControllMixerVolume(AudioType audioType, float vol)
         {
